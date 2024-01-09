@@ -56,7 +56,7 @@ namespace ATMApp.UI
         
         internal static void DisplayMenu()
         {
-            Console.Clear();
+            
             Console.WriteLine("---------ABC ATM OPTIONS--------");
             Console.WriteLine(":                               ");
             Console.WriteLine("1. Account Balance             :");

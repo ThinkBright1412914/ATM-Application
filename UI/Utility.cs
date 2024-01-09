@@ -12,11 +12,12 @@ namespace ATMApp.UI
     {
         private static long tranId;
 
-        public static long GetTransactionId() {  
-            return ++tranId; 
+        public static long GetTransactionId()
+        {
+            return ++tranId;
         }
-        
-        public static  string GetSecretInput(string prompt)
+
+        public static string GetSecretInput(string prompt)
         {
             bool isPrompt = true;
             string asterics = "";
@@ -30,30 +31,31 @@ namespace ATMApp.UI
                 isPrompt = false;
 
                 ConsoleKeyInfo inputKey = Console.ReadKey(true);
-                
+
                 if (inputKey.Key == ConsoleKey.Enter)
                 {
-                    if(input.Length == 4)
+                    if (input.Length == 4)
                     {
                         break;
                     }
                     else
                     {
-                        PrintMessage("\nPlease Enter 4 digits.",false);
+                        PrintMessage("\nPlease Enter 4 digits.", false);
                         input.Clear();
                         isPrompt = true;
                         continue;
                     }
                 }
-                if(inputKey.Key == ConsoleKey.Backspace && input.Length > 0)
+                if (inputKey.Key == ConsoleKey.Backspace && input.Length > 0)
                 {
                     input.Remove(input.Length - 1, 1);
-                }else if(inputKey.Key != ConsoleKey.Backspace)
+                }
+                else if (inputKey.Key != ConsoleKey.Backspace)
                 {
                     input.Append(inputKey.KeyChar);
                     Console.Write(asterics + "*");
                 }
-            
+
             }
             return input.ToString();
         }
@@ -72,10 +74,10 @@ namespace ATMApp.UI
             PressEnterToContinue();
         }
 
-        public static string GetUserInput (string prompt)
+        public static string GetUserInput(string prompt)
         {
-            Console.WriteLine ($"Enter {prompt}");
-            return Console.ReadLine (); 
+            Console.WriteLine($"Enter {prompt}");
+            return Console.ReadLine();
         }
 
         public static void PrintDotAnimation(int timer = 10)
@@ -94,7 +96,7 @@ namespace ATMApp.UI
 
         public static string FormatAmount(decimal amt)
         {
-            return String.Format( "{0:C2}", amt);
+            return String.Format("{0:C2}", amt);
         }
     }
 }

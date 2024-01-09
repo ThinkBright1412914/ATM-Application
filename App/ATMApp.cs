@@ -33,7 +33,7 @@ namespace ATMApp
             CheckUserCardNumAndPswd();
             AppScreen.WelcomeCustomer(selectedAccount.FullName);
 
-            
+          
                 AppScreen.DisplayMenu();
                 ProcessMenuOption();
             
@@ -45,9 +45,9 @@ namespace ATMApp
         {
             UserAccountList = new List<UserAccount>
             {
-                new UserAccount { Id = 1, FullName = "Krishna Thapa", AccountNumber = 150677, CardNumber = 12347, CardPin = 1000, AccountBalance = 3000000, IsLocked = false },
+                new UserAccount { Id = 1, FullName = "Krishna Thapa", AccountNumber = 150677, CardNumber = 12347, CardPin = 2000, AccountBalance = 3000000, IsLocked = false },
                 new UserAccount { Id = 2, FullName = "Sharda Thapa", AccountNumber = 150678, CardNumber = 12346, CardPin = 4321, AccountBalance = 2000000, IsLocked = false },
-                new UserAccount { Id = 3, FullName = "Nabin Kishor", AccountNumber = 150679, CardNumber = 12345, CardPin = 1234, AccountBalance = 5000000, IsLocked = false }
+                new UserAccount { Id = 3, FullName = "Nabin Kishor", AccountNumber = 150679, CardNumber = 12345, CardPin = 1234, AccountBalance = 5000000, IsLocked = true }
             };
 
             _listOfTransactions = new List<Transaction>();
@@ -143,6 +143,7 @@ namespace ATMApp
         public void checkBalance()
         {
             Utility.PrintMessage($"Your account balance is: NRs. {Utility.FormatAmount(selectedAccount.AccountBalance)}");
+            Console.ReadLine();
         }
 
         public void PlaceDeposit()
