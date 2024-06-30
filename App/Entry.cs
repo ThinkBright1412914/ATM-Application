@@ -11,9 +11,7 @@ namespace ATMApp.App
     {
         static void Main(string[] args)
         {
-           
-            
-              
+                               
                 ATMApp atmApp = new ATMApp();
                 atmApp.InitializedData();
                 atmApp.Run();   
